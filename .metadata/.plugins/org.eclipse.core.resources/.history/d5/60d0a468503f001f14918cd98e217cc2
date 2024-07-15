@@ -1,0 +1,15 @@
+package com.kh.ch05_object;
+
+public class Student {
+	//필드부
+	
+	String name;
+	int age;
+	double height;
+	String phone;
+	String address;
+	
+	//생성자부
+	
+	//메소드부
+}

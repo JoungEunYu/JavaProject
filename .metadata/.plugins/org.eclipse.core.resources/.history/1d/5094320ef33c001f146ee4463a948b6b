@@ -1,0 +1,11 @@
+package com.kh.practice.set;
+
+public class Person {
+	private String name;
+	private int age;
+	private double height;
+	
+	// 모든 필드의 값이 일치하면 동일한 객체로 판단 : equals, hashCode
+	
+	
+}

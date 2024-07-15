@@ -1,0 +1,13 @@
+package hello;
+
+public class HelloJava {
+
+	public static void main(String[] args) {
+
+		char a = 10000000;
+		
+		System.out.println(a);
+		
+	}
+
+}

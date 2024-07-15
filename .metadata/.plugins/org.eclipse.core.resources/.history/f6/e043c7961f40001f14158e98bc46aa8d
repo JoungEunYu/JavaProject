@@ -1,0 +1,18 @@
+package com.kh.ch11_api;
+
+public class API03_Wrapper {
+	/*
+	 * 
+	 * 	Wrapper 클래스
+	 *  => 기본 자료형을 객체로 감싸는 클래스
+	 *  
+	 *  	기본 자료형 <------> Wrapper 클래스
+	 *  	boolean 		  Boolean
+	 *  	char			  Character
+	 *  	byte			  Byte
+	 *  	short			  Short
+	 *  	int				  Integer
+	 *  	long			  Long
+	 */
+
+}

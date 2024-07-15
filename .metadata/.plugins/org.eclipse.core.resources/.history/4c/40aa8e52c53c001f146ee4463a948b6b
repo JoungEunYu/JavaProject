@@ -1,0 +1,21 @@
+package hello;
+
+public class HelloJava {
+
+	public static void main(String[] args) {
+
+		int age = 9;
+		int charge;
+		
+		if(age < 8) {
+			System.out.println("아동");
+		} else if (age < 14) {
+			System.out.println("초딩");
+		} else if (age < 20 ) {
+			System.out.println("중, 고딩");
+		} else {
+			System.out.println("일반인");
+		}
+	}
+
+}

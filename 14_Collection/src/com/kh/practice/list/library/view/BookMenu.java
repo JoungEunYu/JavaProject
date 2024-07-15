@@ -1,0 +1,196 @@
+package com.kh.practice.list.library.view;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import com.kh.practice.list.library.controller.BookController;
+import com.kh.practice.list.library.model.vo.Book;
+
+//사용자에게 인터페이스 제공, 입력처리 및 화면 표시 하는 클래스
+//화면(view)용 클래스 --> 사용자에게 데이터를 표시(출력)하거나 입력을 받는 역할
+public class BookMenu {
+
+	// 입력 클래스 호출
+	private Scanner sc = new Scanner(System.in);
+	// BookController 인스턴스 생성하여 bc에 주소값 저장
+	private BookController bc = new BookController();
+
+	// 첫 실행화면
+	public void mainMenu() {
+
+		System.out.println("===== Welcome KH Libraray =====");
+
+		// 종료할 때까지 무한 반복
+		while (true) {
+
+			// 다양한 메뉴들 출력
+			System.out.println("=====***** 메인 메뉴 *****=====");
+			System.out.println("1. 새 도서 추가");
+			System.out.println("2. 도서 전체 조회 ");
+			System.out.println("3. 도서 검색 조회");
+			System.out.println("4. 도서 삭제");
+			System.out.println("5. 도서 명 오름차순 정렬");
+			System.out.println("9. 종료");
+
+			// 메뉴 번호를 입력받음
+			System.out.print("메뉴 번호 선택 : ");
+			int menu = sc.nextInt();
+			sc.nextLine(); // nextLine 메소드 외에는 버퍼에 엔터키(\n) 값이 남아있어 제거하기 위해 사용
+
+			// 각각의 번호에 맞는 메소드를 실행함.
+			switch (menu) {
+			case 1:
+				insertBook();
+				break;
+			case 2:
+				selectList();
+				break;
+			case 3:
+				searchBook();
+				break;
+			case 4:
+				deleteBook();
+				break;
+			case 5:
+				ascBook();
+				break;
+			// 9를 입력하면 프로그램을 아예 종료
+			case 9:
+				System.out.println("프로그램을 종료합니다.");
+				return; // 메소드 종료 --> 현재 메소드를 호출한 위치로 돌아감!
+			// 조건에 없는 값을 선택하면 메뉴 다시 실행
+			default:
+				System.out.println("잘못 입력하였습니다. 다시 입력해주세요");
+				break;
+			}
+
+		}
+	}
+
+	// 도서 추가를 위한 메소드
+	public void insertBook() {
+
+		// 각각의 정보를 입력받음
+		System.out.println("===== 새 도서 추가 =====");
+		System.out.println("책 정보를 입력해주세요.");
+
+		System.out.print("도서명 : ");
+		String title = sc.nextLine();
+
+		System.out.print("저자 명 : ");
+		String author = sc.next();
+
+		System.out.print("장르(1. 인문 / 2. 과학 / 3. 외국어 / 4. 기타) : ");
+		int category = sc.nextInt();
+
+		System.out.print("가격 : ");
+		int price = sc.nextInt();
+
+		// 장르선택시 숫자를 입력하기 때문에 문자로 변환 시켜주는 코드
+		// 조건문을 사용한 방식
+		String strCtg = "";
+		if (category == 1) {
+			strCtg = "인문";
+		} else if (category == 2) {
+			strCtg = "과학";
+		} else if (category == 3) {
+			strCtg = "외국어";
+		} else if (category == 4) {
+			strCtg = "기타";
+		}
+
+		// 배열을 사용한다면
+//		String[] categories = {"인문", "자연과학", "의료", "기타"};
+//		Book b2 = new Book(title, author, categories[category-1], price);
+
+		// 문자열 split() 사용한다면..
+//		String categories = "인문,자연과학,의료,기타";
+//		Book b3 = new Book(title, author, categories.split(",")[category-1], price);
+
+		// Book 객체에 입력받은 값들 전달
+		Book b = new Book(title, author, strCtg, price);
+
+		// insertBook 메소드에 b를 넘겨줌
+		bc.insertBook(b);
+
+	}
+
+	// 도서 정보 전체를 출력하는 메소드
+	public void selectList() {
+
+		System.out.println("===== 도서 전체 조회 =====");
+
+		// Book 타입으로 선언된 bookList에 selectList() 대입
+		ArrayList<Book> bookList = bc.selectList();
+		// BookList가 비었을 경우 "존재하는 도서가 없습니다." 출력
+		if (bookList.isEmpty()) {
+			System.out.println("존재하는 도서가 없습니다.");
+			// 그렇지 않을 시 booList에 있는 각각의 인덱스 값들을 출력
+		} else {
+			for (int i = 0; i < bookList.size(); i++) {
+				System.out.println(bookList.get(i)/* .toString */); // get(index) : 해당 index위치의 데이터 조회
+			}
+		}
+	}
+
+	// 찾고자 하는 책을 키워드를 받아서 출력하는 메소드
+	public void searchBook() {
+
+		System.out.println("===== 도서 검색 =====");
+
+		// 찾고자 하는 값을 입력받음
+		System.out.print("검색 키워드 : ");
+		String keyword = sc.nextLine();
+
+		// Book 타입으로 선언된 searchList에 입력받은 매개변수 keyword를 전달하고 결과를 대입함.
+		ArrayList<Book> searchList = bc.searchBook(keyword);
+
+		// 값이 없다면 "비어있습니다." 출력
+		if (searchList.isEmpty()) {
+			System.out.println("비어있습니다.");
+			// 그렇지 않다면 serchList 각각의 인덱스 값 모두 출력
+		} else {
+			for (int i = 0; i < searchList.size(); i++) {
+				System.out.println(searchList.get(i));
+			}
+		}
+	}
+
+	// 삭제할 책을 입력받고 결과를 보여주는 메소드
+	public void deleteBook() {
+
+		System.out.println("===== 도서 삭제 =====");
+
+		// 삭제할 도서의 도서명과 저자명을 모두 입력받음
+		System.out.println("삭제할 도서 명 : ");
+		String title = sc.nextLine();
+		System.out.println("삭제할 저자 명 : ");
+		String author = sc.nextLine();
+
+		// deleteBook에 title과 author를 보내주고 받은 결과를 Book타입의 remove에 저장.
+		Book remove = bc.deleteBook(title, author);
+
+		// remove에 값이 돌아오지 않으면 null이므로 삭제 실패 출력
+		if (remove == null) {
+			System.out.print("삭제할 도서를 찾지 못했습니다.");
+			// remove에 값이 들어왔다면 삭제성공 출력
+		} else {
+			System.out.print("성공적으로 삭제되었습니다.");
+		}
+	}
+
+	// 도서명 오름차순 정렬용 메소드
+	public void ascBook() {
+		// 컨트롤러의 ascBook() 메소드 결과에 따라
+		// 성공시 "정렬에 성공했습니다" 출력
+		// 실패시 "정렬에 실패했습니다" 출력
+
+		int result = bc.ascBook();
+		if (result == 1) {
+			System.out.println("정렬에 성공했습니다.");
+		} else {
+			System.out.println("정렬에 실패했습니다.");
+		}
+	}
+
+}

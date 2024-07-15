@@ -1,0 +1,7 @@
+package com.kh.ch09_interface;
+
+public class GrowingPlant {
+	
+	/*public abstract*/ void sprinkleWater();
+	void baskSun;
+}

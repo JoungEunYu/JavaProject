@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.kh.practice.DataClass03&apos; to &apos;Multi&apos;&#x0D;&#x0A;- Original project: &apos;13_Generic&apos;&#x0D;&#x0A;- Original element: &apos;com.kh.practice.DataClass03&apos;&#x0D;&#x0A;- Renamed element: &apos;com.kh.practice.Multi&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;DataClass03&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.kh.practice{DataClass03.java[DataClass03" matchStrategy="1" name="Multi" qualified="false" references="true" similarDeclarations="false" stamp="1720060229465" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,27 @@
+package com.kh.ch05_object;
+
+public class Student {
+	//필드부
+	
+	String name;
+	int age;
+	double height;
+	String phone;
+	String address;
+	
+	//생성자부
+	public Student() {
+		
+	}
+	public Student(String name, int age, double height, String phone, String address) {
+		
+		this.name = name;
+		this.age = age;
+		this.height = height;
+		this.phone = phone;
+		this.address = address;
+		
+	}
+	
+	//메소드부
+}

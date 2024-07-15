@@ -1,0 +1,10 @@
+package com.kh.practice.set.view;
+
+import java.util.Scanner;
+
+public class LotteryMenu {
+	
+	private Scanner sc = new Scanner(System.in);
+	
+
+}

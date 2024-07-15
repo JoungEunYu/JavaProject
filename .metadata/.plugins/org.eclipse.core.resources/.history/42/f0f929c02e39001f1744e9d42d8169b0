@@ -1,0 +1,17 @@
+package hello;
+
+public class HelloJava {
+
+	public static void main(String[] args) {
+
+		
+		byte bVal = 20;
+		byte bVa2l = 120;
+		
+		
+		
+		System.out.println(bVal + bVa2l);
+
+	}
+
+}

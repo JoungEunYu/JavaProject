@@ -1,0 +1,18 @@
+package com.kh.ch09_interface;
+
+public class Lavender extends Plant {
+	
+	public Lavender(String name) {
+		this.name = name;
+	}
+	
+	@Override
+	public void sprinkleWater() {
+		
+	}
+	
+	public void baskSun() {
+		
+	}
+	
+}

@@ -1,0 +1,43 @@
+package com.kh.practice.set.controller;
+
+import java.util.HashSet;
+import java.util.TreeSet;
+
+import com.kh.practice.set.model.compare.SortedLottery;
+import com.kh.practice.set.model.vo.Lottery;
+
+public class LotteryController {
+	private HashSet lottery = new HashSet();
+	// 추첨 대상
+	private HashSet win = new HashSet();
+	// 당첨 대상
+
+	public boolean insertObject(Lottery l) {
+
+		return lottery.add(l);
+	}
+
+	public boolean deleteObject(Lottery l) {
+		return true;
+	}
+
+	public HashSet winObject() {
+		return win;
+	}
+
+	public TreeSet sortedWinObject() {
+		// TreeSet 생성자에게 정렬 기준을 정의한 SortedLottery 객체의 인스턴스 전달
+		TreeSet<Lottery> sortedWin = new TreeSet<>(new SortedLottery());
+		sortedWin.addAll(win);
+		
+		return sortedWin;
+	}
+
+	public boolean searchWinner(Lottery l) {
+		// 전달 받은 객체 (Lottery l)를 win 객체에서 찾고,
+		// 찾은 결과인 boolean 값 반환
+		win.contains(l);
+		return 1;
+	}
+
+}

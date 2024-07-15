@@ -1,0 +1,10 @@
+package com.kh.ch05_object;
+
+public class Animal {
+	private String name;		// 이름
+	private int age;			// 나이
+	private char gender;		// 성별
+	private String masterName;	// 주인 이름
+	private String kind;// 종
+
+}

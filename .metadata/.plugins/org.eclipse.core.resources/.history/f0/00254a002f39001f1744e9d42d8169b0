@@ -1,0 +1,19 @@
+package hello;
+
+public class HelloJava {
+
+	public static void main(String[] args) {
+
+		
+		byte bVal = 20;
+		byte bVa2l = 120;
+		
+		Serializable
+		
+		System.out.println(bVal + bVa2l);
+
+	}
+
+}
+
+정독 밑줄 책예제(notion)-> 특별한 내용은 tstory / 실습예제(notion) 주석 백준(tstory)

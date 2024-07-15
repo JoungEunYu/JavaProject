@@ -1,0 +1,16 @@
+package com.kh.practice.udp;
+
+public class UDPServer {
+	public static void main(String[] args) {
+		//  1. IP(PC에 지정되어 있음) / 포트
+		int port = 8090;
+		
+		
+		// 이 서버는 8090 포트를 사용하여 요청받을 준비!
+		try(DatagramSocket ds = new DatagramSocket(port)); {
+			catch(SocketException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}

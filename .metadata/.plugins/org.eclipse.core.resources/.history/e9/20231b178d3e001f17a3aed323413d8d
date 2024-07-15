@@ -1,0 +1,17 @@
+package com.kh.practice;
+
+import java.util.Scanner;
+
+public class TCPClient {
+	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		// 1) 요청할 서버의 "IP주소", "포트번호" 확인
+		String ip = "192.168.10.23";
+		int port = 3000;
+		
+	}
+
+}

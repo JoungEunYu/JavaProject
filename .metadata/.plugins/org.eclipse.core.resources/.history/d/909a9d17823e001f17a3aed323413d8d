@@ -1,0 +1,15 @@
+package com.kh.practice.udp;
+
+import java.util.Scanner;
+
+public class UDPClient {
+
+	public static void main(String[] args) {
+		
+		// 사용자에게 메시지 입력받기 
+		Scanner sc = new Scanner(System.in);
+		System.out.println("전송 메시지 입력 : ");
+
+	}
+
+}

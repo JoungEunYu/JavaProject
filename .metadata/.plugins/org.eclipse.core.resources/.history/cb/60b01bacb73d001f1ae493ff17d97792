@@ -1,0 +1,36 @@
+package com.kh.practice.map.controller;
+
+import java.util.Scanner;
+
+public class MemberController {
+	private Scanner sc = new Scanner(System.in);
+	private MemberController mc = new MemberController();
+	
+	public void mainMenu() {
+		
+	}
+	
+	public void memberMenu() {
+		
+	}
+	
+	public void joinMembership() {
+		
+	}
+	
+	public void logIn() {
+		
+	}
+	
+	public void changePassword() {
+		
+	}
+	
+	public void chageName() {
+		
+	}
+	
+	public void sameName() {
+		
+	}
+}
